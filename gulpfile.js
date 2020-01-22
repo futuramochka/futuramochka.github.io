@@ -56,13 +56,13 @@ function watch(){
 
     Sync.init({
         server: {
-            baseDir: "./source"
+            baseDir: "./"
         }
     });
 
     gulp.watch('./source/less/**/*.less', styles)
     gulp.watch('./source/js/**/*.js', scripts)
-    gulp.watch("./source/*.html").on('change', Sync.reload)
+    gulp.watch("./*.html").on('change', Sync.reload)
 }
 
 //Таск на скрипты
