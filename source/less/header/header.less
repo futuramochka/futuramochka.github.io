@@ -1,0 +1,86 @@
+@full-width: 100%; //Общая резиновая ширина
+@width-mobile-header: 320px; //Ширина мобильной шапки
+@height-mobile-header: 325px; //Высота мобильной шапки
+
+@padding-page-header: 20px; // Отступ для блока шапки
+@height-logo-image: 27px; //Высота логотипа
+@height-line-link: 32px; //Высота строки названия меню
+@height-menu-item: 64px; //Высота блока меню
+@height-first-block: 70px; //Высота шапки без меню
+
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.page-header {
+  width: @full-width;
+  height: @height-mobile-header;
+
+  background-color: #283645;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.page-header__logo {
+  padding-top: (@height-first-block - @height-logo-image)/2;
+  padding-left: percentage(@padding-page-header/@width-mobile-header);
+}
+
+.button-menu {
+  height: 70px;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  padding-right: percentage(@padding-page-header/@width-mobile-header);
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.nav {
+  width: @full-width;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.nav-menu__item {
+  width: inherit;
+  height: @height-menu-item;
+
+  text-align: center;
+
+  &::before {
+    content: "";
+
+    display: block;
+    width: inherit;
+    height: 1px;
+    margin-bottom: (@height-menu-item - @height-line-link)/2;
+
+    background-color: #000000;
+    box-shadow: 0 1px 0 #485461;
+  }
+}
+
+.nav-menu__link {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
